@@ -1,0 +1,50 @@
+--Create a skincare store database
+
+/**Skincare:
+Sheetmasks (20),
+Cleansing Oil (6),
+Water Based Cleanser (7),
+Toner (9),
+Essence (15),
+Eye Serum (5),
+Eye Cream (2),
+Niacinamide (3),
+Vitamin C (1),
+Retinol (2),
+Hyaluronic Acid (4),
+BHA Serum (1),
+Clay Mask (11),
+Lip Mask (5),
+Gel Moisturizer (24)
+Ceramide Moisturizer (1),
+Sleeping Mask (3)
+**/
+
+CREATE TABLE skincare (id INTEGER PRIMARY KEY, name TEXT, skin_type TEXT, consistency TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO skincare VALUES (1, "Sheetmasks", "All", "Thin", 1.99, (20) );
+INSERT INTO skincare VALUES (2, "Cleansing Oil", "All", "Thin", 12.35, (6));
+INSERT INTO skincare VALUES (3, "Water Based Cleanser", "All", "Thick", 13.50, (7) ); 
+INSERT INTO skincare VALUES (4, "Toner", "All", "Thin", 10.99, (9) );
+INSERT INTO skincare VALUES (5, "Essence", "All", "Thin", 19.99, (15) );
+INSERT INTO skincare VALUES (6, "Eye Serum", "All", "Thin", 29.99, (5) );
+INSERT INTO skincare VALUES (7, "Eye Cream", "Dry/All", "Thick", 34.99, (2) );
+INSERT INTO skincare VALUES (8, "Niacinamide", "All", "Thin", 4.99, (3) );
+INSERT INTO skincare VALUES (9, "Vitamin C", "All", "Thin", 19.99, (1) );
+INSERT INTO skincare VALUES (10, "Retinol", "Sensitive-X", "Thin", 24.99, (2) );
+INSERT INTO skincare VALUES  (11, "Hyaluronic Acid", "All", "Thin", 4.99, (4) );
+INSERT INTO skincare VALUES (12, "BHA Serum", "Sensitive-X", "Thin", 9.99, (1) );
+INSERT INTO skincare VALUES (13, "Clay Mask", "Oily", "Thick", 14.99, (11) );
+INSERT INTO skincare VALUES (14, "Lip Mask", "All", "Thick", 7.99, (5) );
+INSERT INTO skincare VALUES (15, "Gel Moisturizer", "Oily", "Medium", 14.99, (24) );
+INSERT INTO skincare VALUES (16, "Ceramide Moisturizer", "Dry", "Thick", 14.99, (1) );
+INSERT INTO skincare VALUES  (17, "Sleeping Mask", "Dry", "Thick", 24.99, (3) );
+
+--Display the database ordered by price.
+SELECT * FROM skincare ORDER BY price;
+
+--What is the sum of the store inventory?
+SELECT SUM(quantity) FROM skincare;
+
+--What is the order of the products by consistency?
+SELECT * FROM skincare ORDER BY consistency;
